@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>myeditor</title>
+
+    <!-- auto -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/darcula.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/edit/matchbrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/edit/closebrackets.min.js"></script> -->
+
+    <!-- highlight -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css"> -->
+    
+    <script src="autocomplt.js"></script>
+    <link rel="stylesheet" href="edit.css">
+</head>
+<body>
+    <div class="leftPart">
+        <div class="content">
+            <label >html</label>
+            <textarea name="" id="html-editor" ></textarea>
+        </div>
+        <div class="content">
+            <label >css</label>
+            <textarea name="" id="css-editor" ></textarea>
+        </div>
+        <div class="content">
+            <label >js</label>
+            <textarea name="" id="js-editor" ></textarea>
+        </div>
+    </div>
+    <div class="rightPart">
+        <label >output</label>
+        <iframe src="" id="output"></iframe>
+    </div>
+
+
+    <script>
+        let iframe = document.querySelector('#output');
+        let allInputs = document.querySelectorAll(".leftPart textarea")
+        
+
+        let htmlCode,cssCode,jsCode='';
+        allInputs.forEach((el,index) => {
+            el.addEventListener('keyup', ()=>{
+                if (index == 0) {
+                    htmlCode = el.value;
+                }
+                if (index == 1) {
+                    cssCode = el.value;
+                }
+                if (index == 2) {
+                    jsCode = el.value;
+                }
+                
+                output.contentDocument.body.innerHTML = htmlCode;
+                output.contentDocument.head.innerHTML = `<style>${cssCode}</style>`;
+                output.contentWindow.eval(jsCode)
+
+
+            })
+        })
+    </script>
+</body>
+</html>
