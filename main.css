@@ -24,7 +24,7 @@ header h1 {
     font-size: 2.8rem;
     color: #00ff90;
     margin-bottom: 10px;
-    text-shadow: 0 0 10px #00ff90, 0 0 20px #00ff90;
+    text-shadow: 0 0 5px #00ff90;
 }
 
 .quote {
@@ -50,7 +50,7 @@ header h1 {
 .cta-button:hover {
     background-color: #e6006c;
     transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 0 15px #ff007f;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 0 3px #ff007f;
 }
 
 /* Highlight Announcement */
@@ -61,7 +61,7 @@ header h1 {
     text-align: center;
     font-weight: bold;
     border-radius: 10px;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
     margin-bottom: 20px;
     position: relative;
     overflow: hidden;
@@ -84,7 +84,7 @@ header h1 {
     top: -10px;
     left: -25px;
     transform: rotate(-15deg);
-    box-shadow: 0 0 8px rgba(255, 0, 127, 0.6);
+    box-shadow: 0 0 5px rgba(255, 0, 127, 0.4);
 }
 
 /* Highlighted Feature */
@@ -97,13 +97,12 @@ header h1 {
     transition: color 0.3s ease, background-color 0.3s ease;
     list-style: none;
     background-color: rgba(0, 255, 144, 0.1);
-    box-shadow: 0 3px 6px rgba(0, 255, 144, 0.3); 
+    box-shadow: 0 3px 6px rgba(0, 255, 144, 0.2); 
 }
 
 .highlighted-feature:hover {
     color: rgb(255, 0, 128);
-    background-color: rgba(255, 0, 127, 0.7);
-    text-shadow: 0 0 2px #00ff90, 0 0 15px #00ff90;
+    background-color: rgba(255, 0, 127, 0.4);
     box-shadow: none; 
 }
 
@@ -117,7 +116,7 @@ header h1 {
     background-color: #2a2a2a;
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
 }
 
@@ -125,7 +124,7 @@ header h1 {
     font-size: 1.8rem;
     margin-bottom: 10px;
     color: #00ff90;
-    text-shadow: 0 0 10px #00ff90, 0 0 20px #00ff90;
+    text-shadow: 0 0 5px #00ff90;
 }
 
 .features ul, .future-plans ul {
@@ -142,7 +141,7 @@ header h1 {
     border-radius: 10px;
     transition: background-color 0.3s ease;
     background-color: rgba(255, 0, 127, 0.1);
-    box-shadow: 0 3px 6px rgba(0, 255, 144, 0.2);
+    box-shadow: 0 3px 6px rgba(0, 255, 144, 0.1);
 }
 
 .features li:hover, .future-plans li:hover {
@@ -160,3 +159,14 @@ footer p {
     font-size: 1rem;
     color: #bbb;
 }
+/* .welcome-text {
+    color: #add8e6; 
+    text-shadow: 0 0 5px #add8e6;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #0000ff; 
+    margin-bottom: 10px;
+    text-shadow: 0 0 5px #0000ff; 
+} */
