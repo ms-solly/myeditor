@@ -42,7 +42,8 @@
 
 2. **Open the `index.html` file** in your web browser. If you're using VSCode, simply click on the <img src="https://github.com/user-attachments/assets/bfe17ea7-84b3-42c1-8c71-e8759d17355a" alt="wifi icon" width="12" height="12" /> **Go Live** button at the bottom-right corner.
 
-    > **Tip**: If you don't have the Live Server extension installed, you can easily get it here: [Live Server Extension](vscode:extension/ritwickdey.LiveServer).
+   > **Tip**: If you don't have the Live Server extension installed, you can easily get it here: [Live Server Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.liveserver).
+
 
 3. **Start coding**! Modify the code to suit your needs.
 
