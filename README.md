@@ -1,6 +1,6 @@
-# MyEditor
+# MiEditor
 
-**MyEditor** is a lightweight, web-based code editor that allows users to write HTML, CSS, and JavaScript in separate sections and view live output in an iframe. It’s designed to be minimalistic yet functional, providing a convenient environment for experimenting with web code in real-time.
+**MiEditor** is a lightweight, web-based code editor that allows users to write HTML, CSS, and JavaScript in separate sections and view live output in an iframe. It’s designed to be minimalistic yet functional, providing a convenient environment for experimenting with web code in real-time.
 
 ## Features
 
@@ -11,11 +11,13 @@
 
 <details>
   <summary>Preview</summary>
-> This is the old look of MyEditor (old version):
+
+  
+  >This is the old look of MiEditor (old version):
 
  ![image](https://github.com/user-attachments/assets/4dda9aed-c5fd-4016-9653-df82d0885818)
 
-> **Update**: This is the updated look of MyEditor (new version):
+> **Update**: This is the updated look of MiEditor (new version):
 
 ![image](https://github.com/user-attachments/assets/c8c52821-96c7-4479-96af-35db5a2034f6)
 
@@ -23,7 +25,7 @@
 
 ## How to Use
 
-1. **Write HTML, CSS, or JavaScript**: MyEditor provides separate text areas for HTML, CSS, and JavaScript. Simply enter your code into the respective section. 
+1. **Write HTML, CSS, or JavaScript**: MiEditor provides separate text areas for HTML, CSS, and JavaScript. Simply enter your code into the respective section. 
     - **HTML** goes into the `html` section.
     - **CSS** goes into the `css` section.
     - **JavaScript** goes into the `js` section.
@@ -49,7 +51,7 @@
 
 ## How to Contribute
 
-We welcome contributions to MyEditor! Whether it's fixing bugs, adding features, or improving documentation, your help is appreciated. Here's how you can contribute:
+We welcome contributions to MiEditor! Whether it's fixing bugs, adding features, or improving documentation, your help is appreciated. Here's how you can contribute:
 
 1. **Fork** the repository and create a new branch:
 
