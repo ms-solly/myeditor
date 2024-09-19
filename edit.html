@@ -39,7 +39,9 @@
         </div>
     </div>
 
-    <script>
+    <script type="module">
+        import { initialData } from './demodt.js';
+
         const htmlEditor = document.querySelector('#html-editor');
         const cssEditor = document.querySelector('#css-editor');
         const jsEditor = document.querySelector('#js-editor');
@@ -53,9 +55,20 @@
             outputIframe.srcdoc = `${htmlCode}<style>${cssCode}</style><script>${jsCode}<\/script>`;
         };
 
+        // Load initial data
+        const loadInitialData = () => {
+            htmlEditor.value = initialData.html.trim();
+            cssEditor.value = initialData.css.trim();
+            jsEditor.value = initialData.js.trim();
+            updatePreview();
+        };
+
         htmlEditor.addEventListener('input', updatePreview);
         cssEditor.addEventListener('input', updatePreview);
         jsEditor.addEventListener('input', updatePreview);
+
+        // Load the demo code when the page loads
+        window.addEventListener('load', loadInitialData);
 
         // Dark mode toggle
         const toggleButton = document.querySelector('#toggle-dark-mode');
