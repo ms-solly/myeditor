@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="edit.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
 </head>
-<body class="bg-light">
+<body class="bg-dark"> <!-- Default to dark mode -->
     <button id="toggle-dark-mode" class="toggle-btn">
-        <input type="checkbox" class="checkbox" id="checkbox">
+        <input type="checkbox" class="checkbox" id="checkbox" checked> <!-- Checkbox checked by default -->
         <label for="checkbox" class="checkbox-label">
             <i class="fas fa-moon"></i>
             <i class="fas fa-sun"></i>
@@ -20,20 +20,20 @@
 
     <div class="editor-container">
         <div class="leftPart">
-            <div class="content" id="html-editor-container">
+            <div class="content content-dark" id="html-editor-container">
                 <label for="html-editor">HTML</label>
                 <textarea id="html-editor" placeholder="Enter HTML code..."></textarea>
             </div>
-            <div class="content" id="css-editor-container">
+            <div class="content content-dark" id="css-editor-container">
                 <label for="css-editor">CSS</label>
                 <textarea id="css-editor" placeholder="Enter CSS code..."></textarea>
             </div>
-            <div class="content" id="js-editor-container">
+            <div class="content content-dark" id="js-editor-container">
                 <label for="js-editor">JavaScript</label>
                 <textarea id="js-editor" placeholder="Enter JavaScript code..."></textarea>
             </div>
         </div>
-        <div class="rightPart">
+        <div class="rightPart rightPart-dark">
             <label for="output" class="output-label">Live Preview</label>
             <iframe id="output"></iframe>
         </div>
@@ -89,4 +89,5 @@
         });
     </script>
 </body>
+
 </html>
