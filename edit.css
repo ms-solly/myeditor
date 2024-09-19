@@ -67,21 +67,21 @@
 .checkbox:checked + .checkbox-label .ball {
     transform: translateX(24px);
 }
-
 /* Editor Container */
 .editor-container {
     display: flex;
     width: 100%;
     max-width: 1200px;
-    height: 95vh;
+    height: 95vh; /* Ensure container takes almost full viewport height */
     margin: 0 auto;
     padding: 20px;
     gap: 20px;
     padding-top: 40px;
     flex-direction: row;
+    box-sizing: border-box;
 }
 
-/* Left Part */
+/* Left Part - Make Resizable */
 .leftPart {
     display: flex;
     flex-direction: column;
@@ -89,86 +89,86 @@
     width: 50%;
     max-width: 600px;
     height: 100%;
+    box-sizing: border-box;
+    resize: horizontal; /* Allow horizontal resizing */
+    overflow: auto; /* Ensure content stays visible */
 }
 
-/* Right Part */
+/* Right Part - Make Resizable */
 .rightPart {
     width: 50%;
     height: 100%;
     padding: 20px;
-    background-color: #ffffff; /* Light background for preview */
+    background-color: #ffffff;
     border-radius: 25px;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    resize: vertical; /* Allow vertical resizing */
+    overflow: auto; /* Keep the content visible while resizing */
 }
 
 .rightPart-dark {
-    background-color: #333; /* Dark background for preview */
-    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(0, 0, 0, 0.5); /* Darker shadow */
+    background-color: #333;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(0, 0, 0, 0.5);
 }
 
-/* Editor Content */
+/* Content Section */
 .content {
-    background-color: #ffffff; /* Light background for editor areas */
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 20px;
     box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(0, 0, 0, 0.1);
     position: relative;
+    flex-grow: 1;
+    resize: vertical; /* Allow vertical resizing of the content */
+    overflow: auto; /* Ensure scrolling if content exceeds the area */
 }
 
 .content-dark {
-    background-color: #2a2a2a; /* Dark background for editor areas */
-    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset -5px -5px 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
-}
-
-label {
-    display: block;
-    color: #333;
-    padding-bottom: 10px;
-    font-size: 1.2rem;
-    letter-spacing: 1px;
-}
-
-.bg-dark label {
-    color: #ddd;
+    background-color: #2a2a2a;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset -5px -5px 10px rgba(0, 0, 0, 0.5);
 }
 
 textarea {
     width: 100%;
-    height: calc(100% - 40px);
-    background-color: #f8f8f8; /* Light background for textarea */
+    height: 100%;
+    background-color: #f8f8f8;
     color: #333;
-    padding: 20px; /* Increased padding for more input space */
+    padding: 20px;
     border-radius: 15px;
-    border: 1px solid #ccc; /* Subtle border */
+    border: 1px solid #ccc;
     outline: none;
     box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(0, 0, 0, 0.1);
     font-size: 1rem;
-    resize: none;
+    resize: both; /* Make textarea resizable in both directions */
+    overflow: auto; /* Ensure content visibility */
     font-family: 'Courier New', monospace;
 }
 
 .content-dark textarea {
-    background-color: #444; /* Dark background for textarea */
+    background-color: #444;
     color: #e0e0e0;
-    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset -5px -5px 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
-    border: 1px solid #666; /* Dark border */
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset -5px -5px 10px rgba(0, 0, 0, 0.5);
+    border: 1px solid #666;
 }
 
-/* Iframe Styles */
+/* Iframe Styles - Make Resizable */
 iframe {
     width: 100%;
-    height: calc(100% - 30px);
+    height: 100%;
     border-radius: 15px;
     border: none;
-    background-color: #ffffff; /* Light background for iframe */
+    background-color: #ffffff;
     box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(0, 0, 0, 0.1);
+    resize: both; /* Allow iframe to be resizable both horizontally and vertically */
+    overflow: auto; /* Ensure scrolling if content exceeds the view */
 }
 
 .rightPart-dark iframe {
-    background-color: #333; /* Dark background for iframe */
+    background-color: #333;
 }
 
 /* Responsive Design */
@@ -187,17 +187,18 @@ iframe {
         width: 100%;
         height: 300px;
         margin-top: 10px;
+        resize: none; /* Disable resizing on small screens for better UX */
     }
 }
 
 @media (max-width: 768px) {
     .leftPart .content {
         width: 100%;
-        height: 200px;
+        height: 300px; /* Set a fixed height for mobile */
     }
 
     .rightPart iframe {
-        height: 100%;
+        height: 300px; /* Set a fixed height for mobile */
     }
 
     .editor-container {
