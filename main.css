@@ -100,15 +100,15 @@ header h1 {
 }
 
 .highlighted-feature:hover {
-    color: #00ff90;
-    background-color: rgba(0, 255, 144, 0.2); /* Darker background on hover */
-    text-shadow: 0 0 15px #00ff90, 0 0 25px #00ff90;
-    box-shadow: 0 0 10px rgba(0, 255, 144, 0.7); /* Glow effect on hover */
+    color:rgb(255, 0, 128) ;
+    background-color: rgba(255, 0, 127, 0.7); /* Darker background on hover */
+    text-shadow: 0 0 2px #00ff90, 0 0 25px #00ff90;
+    box-shadow: 0 0 10px rgba(0, 255, 144, 0.7);
 }
 
 .highlighted-feature sub {
     font-size: 1.2rem;
-    color: #00ff90;
+    color: white;
 }
 
 /* Features and Future Plans Sections */
@@ -135,15 +135,16 @@ header h1 {
 .features li, .future-plans li {
     margin-bottom: 15px; /* Increased margin for more space */
     font-size: 1.1rem;
+    color: #e0e0e0; 
     position: relative;
     padding: 10px 20px; /* Added padding */
     border-radius: 10px; /* Rounded corners */
-    transition: color 0.3s ease, box-shadow 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
     background-color: rgba(255, 0, 127, 0.1); /* Light background for better visibility */
 }
 
 .features li:hover, .future-plans li:hover {
-    color: #00ff90;
+    color: #e0e0e0;
     background-color: rgba(0, 255, 144, 0.2); /* Darker background on hover */
     box-shadow: 0 0 15px #00ff90;
 }
