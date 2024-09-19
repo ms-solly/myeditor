@@ -3,72 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>myeditor</title>
+    <title>MiEditor</title>
+    <link rel="stylesheet" href="main.css">
+    <style>
+        .highlight-announcement {
+            background-color: #282c34; 
+            color: #39ff14; 
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
 
-    <!-- auto -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/theme/darcula.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/codemirror.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/htmlmixed/htmlmixed.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/css/css.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/mode/javascript/javascript.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/edit/matchbrackets.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/edit/closebrackets.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.0/addon/edit/closebrackets.min.js"></script> -->
-
-    <!-- highlight -->
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-okaidia.min.css"> -->
-    
-    <script src="autocomplt.js"></script>
-    <link rel="stylesheet" href="edit.css">
+        .highlight-announcement marquee {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #39ff14;
+        }
+    </style>
 </head>
 <body>
-    <div class="leftPart">
-        <div class="content">
-            <label >html</label>
-            <textarea name="" id="html-editor" ></textarea>
-        </div>
-        <div class="content">
-            <label >css</label>
-            <textarea name="" id="css-editor" ></textarea>
-        </div>
-        <div class="content">
-            <label >js</label>
-            <textarea name="" id="js-editor" ></textarea>
-        </div>
+    <!-- 
+    <div class="highlight-announcement">
+        <marquee behavior="scroll" direction="left">
+            ✨ We've just added a new feature: <strong>Code Highlighting!</strong> 🎉 Try it now and enjoy an enhanced coding experience with syntax highlighting.
+        </marquee>
     </div>
-    <div class="rightPart">
-        <label >output</label>
-        <iframe src="" id="output"></iframe>
+    -->
+
+    <div class="highlight-announcement">
+        <marquee behavior="scroll" direction="left">
+            ✨ New Themes Available! <strong>Switch between Dark and Light modes</strong> 🌙☀️ Explore our new themes in the editor now!
+        </marquee>
     </div>
 
+    <header>
+        <h1>Welcome to MiEditor!</h1>
+        <p class="quote">"Code is like humor. When you have to explain it, it’s bad." - Cory House</p>
+        <a href="/edit.html" class="cta-button">Try the Editor</a>
+    </header>
 
-    <script>
-        let iframe = document.querySelector('#output');
-        let allInputs = document.querySelectorAll(".leftPart textarea")
-        
+    <main>
+        <section class="features">
+            <h2>Features</h2>
+            <ul>
+                <li><strong>Real-time Preview:</strong> See your changes instantly as you code.</li>
+                <li><strong>Multi-language Support:</strong> Write and test HTML, CSS, and JavaScript seamlessly.</li>
+                <li><strong>Dark Mode:</strong> Switch to dark mode for a comfortable coding experience.</li>
+                <li class="highlighted-feature">
+                    <strong><sup class="new-badge">New!</sup><sub>Dark and Light Themes:</sub> </strong><sub> Enjoy the flexibility of switching between light and dark modes to suit your preferences.</sub> 
+                </li>
+                <li><strong>Customizable Layout:</strong> Arrange your code editors and preview as you like.</li>
+            </ul>
+        </section>
 
-        let htmlCode,cssCode,jsCode='';
-        allInputs.forEach((el,index) => {
-            el.addEventListener('keyup', ()=>{
-                if (index == 0) {
-                    htmlCode = el.value;
-                }
-                if (index == 1) {
-                    cssCode = el.value;
-                }
-                if (index == 2) {
-                    jsCode = el.value;
-                }
-                
-                output.contentDocument.body.innerHTML = htmlCode;
-                output.contentDocument.head.innerHTML = `<style>${cssCode}</style>`;
-                output.contentWindow.eval(jsCode)
+        <section class="future-plans">
+            <h2>What&apos;s Next?</h2>
+            <p style="color: rgba(255, 0, 140, 0.751); padding:9px;">We're constantly working to improve MiEditor. Here&apos;s what&apos;s on the horizon:</p>
+            <ul>
+                <li><strong>Enhanced Code Completion:</strong> More intelligent and context-aware code suggestions.</li>
+                <li><strong>Integrated Debugger:</strong> Tools for debugging and profiling your code right in the editor.</li>
+                <li><strong>Collaboration Features:</strong> Work on projects with others in real-time.</li>
+                <li><strong>Plugin Support:</strong> Extend functionality with community plugins.</li>
+                <li><strong>Mobile Optimization:</strong> Access and code on-the-go from any device.</li>
+                <li><strong>Code Highlighting:</strong> Syntax highlighting for better readability will be coming soon!</li>
 
+            </ul>
+        </section>
+    </main>
 
-            })
-        })
-    </script>
+    <footer>
+        <p>&copy; 2024 MiEditor. All rights reserved.</p>
+        <p class="quote">"The best way to predict the future is to invent it." - Alan Kay</p>
+    </footer>
 </body>
 </html>

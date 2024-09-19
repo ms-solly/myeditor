@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css">
+    <link rel="stylesheet" href="edit.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</head>
+<body class="bg-light">
+    <button id="toggle-dark-mode" class="toggle-btn">
+        <input type="checkbox" class="checkbox" id="checkbox">
+        <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+        </label>
+    </button>
+
+    <div class="editor-container">
+        <div class="leftPart">
+            <div class="content" id="html-editor-container">
+                <label for="html-editor">HTML</label>
+                <textarea id="html-editor" placeholder="Enter HTML code..."></textarea>
+            </div>
+            <div class="content" id="css-editor-container">
+                <label for="css-editor">CSS</label>
+                <textarea id="css-editor" placeholder="Enter CSS code..."></textarea>
+            </div>
+            <div class="content" id="js-editor-container">
+                <label for="js-editor">JavaScript</label>
+                <textarea id="js-editor" placeholder="Enter JavaScript code..."></textarea>
+            </div>
+        </div>
+        <div class="rightPart">
+            <label for="output" class="output-label">Live Preview</label>
+            <iframe id="output"></iframe>
+        </div>
+    </div>
+
+    <script>
+        const htmlEditor = document.querySelector('#html-editor');
+        const cssEditor = document.querySelector('#css-editor');
+        const jsEditor = document.querySelector('#js-editor');
+        const outputIframe = document.querySelector('#output');
+
+        const updatePreview = () => {
+            const htmlCode = htmlEditor.value;
+            const cssCode = cssEditor.value;
+            const jsCode = jsEditor.value;
+
+            outputIframe.srcdoc = `${htmlCode}<style>${cssCode}</style><script>${jsCode}<\/script>`;
+        };
+
+        htmlEditor.addEventListener('input', updatePreview);
+        cssEditor.addEventListener('input', updatePreview);
+        jsEditor.addEventListener('input', updatePreview);
+
+        // Dark mode toggle
+        const toggleButton = document.querySelector('#toggle-dark-mode');
+        const checkbox = document.getElementById("checkbox");
+
+        toggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('bg-light');
+            document.body.classList.toggle('bg-dark');
+            document.querySelectorAll('.content').forEach(el => el.classList.toggle('content-dark'));
+            document.querySelector('.rightPart').classList.toggle('rightPart-dark');
+        });
+
+        checkbox.addEventListener("change", () => {
+            document.body.classList.toggle('bg-light');
+            document.body.classList.toggle('bg-dark');
+            document.querySelectorAll('.content').forEach(el => el.classList.toggle('content-dark'));
+            document.querySelector('.rightPart').classList.toggle('rightPart-dark');
+        });
+    </script>
+</body>
+</html>

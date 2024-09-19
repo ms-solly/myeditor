@@ -1,0 +1,159 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #00ff90;
+    margin-bottom: 10px;
+    text-shadow: 0 0 15px #00ff90, 0 0 25px #00ff90;
+}
+
+.quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: #bbb;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    background-color: #ff007f;
+    color: #fff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e6006c;
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3), 0 0 20px #ff007f;
+}
+
+/* Highlight Announcement */
+.highlight-announcement {
+    background-color: #282c34;
+    color: #39ff14;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-announcement marquee {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #39ff14;
+}
+
+.new-badge {
+    background-color: #ff007f;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    position: absolute;
+    top: -10px;
+    left: -25px;
+    transform: rotate(-15deg);
+    box-shadow: 0 0 10px rgba(255, 0, 127, 0.7);
+}
+
+/* Highlighted Feature */
+.highlighted-feature {
+    font-size: 1.2rem;
+    color: #39ff14;
+    position: relative;
+    padding: 10px 20px; /* Added padding */
+    border-radius: 10px; /* Rounded corners */
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    list-style: none; /* Ensures no default list styling */
+    background-color: rgba(0, 255, 144, 0.1); /* Light background for better visibility */
+}
+
+.highlighted-feature:hover {
+    color: #00ff90;
+    background-color: rgba(0, 255, 144, 0.2); /* Darker background on hover */
+    text-shadow: 0 0 15px #00ff90, 0 0 25px #00ff90;
+    box-shadow: 0 0 10px rgba(0, 255, 144, 0.7); /* Glow effect on hover */
+}
+
+.highlighted-feature sub {
+    font-size: 1.2rem;
+    color: #00ff90;
+}
+
+/* Features and Future Plans Sections */
+.features, .future-plans {
+    background-color: #2a2a2a;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+.features h2, .future-plans h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #00ff90;
+    text-shadow: 0 0 15px #00ff90, 0 0 25px #00ff90;
+}
+
+.features ul, .future-plans ul {
+    list-style: none; /* Ensures no default list styling */
+    padding: 0;
+}
+
+.features li, .future-plans li {
+    margin-bottom: 15px; /* Increased margin for more space */
+    font-size: 1.1rem;
+    position: relative;
+    padding: 10px 20px; /* Added padding */
+    border-radius: 10px; /* Rounded corners */
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 0, 127, 0.1); /* Light background for better visibility */
+}
+
+.features li:hover, .future-plans li:hover {
+    color: #00ff90;
+    background-color: rgba(0, 255, 144, 0.2); /* Darker background on hover */
+    box-shadow: 0 0 15px #00ff90;
+}
+
+footer {
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    font-size: 1rem;
+    color: #bbb;
+}

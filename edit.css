@@ -1,72 +1,243 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
 
-    * {
-        margin: 0;
-        padding: 0;
-        font-family: Segoe Script, sans-serif;
-    }
+/* Light Mode */
+.bg-light {
+    background-color: #f0f0f0; /* Light background */
+    color: #333; /* Dark text color */
+}
 
-    body {
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        background-color: #1e1e1e;
+/* Dark Mode */
+.bg-dark {
+    background-color: #1e1e1e; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+/* Toggle Button Styles */
+.toggle-btn {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's on top */
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox-label {
+    background-color: #00aaff; /* Light mode switch background */
+    width: 50px;
+    height: 26px;
+    border-radius: 50px;
+    position: relative;
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.checkbox-label .ball {
+    background-color: #fff; /* White ball for toggle switch */
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label {
+    background-color: #ff007f; /* Dark mode switch background */
+}
+
+.checkbox:checked + .checkbox-label .ball {
+    transform: translateX(24px);
+}
+
+/* Editor Container */
+.editor-container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    height: 95vh;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 20px;
+    padding-top: 40px;
+    flex-direction: row;
+}
+
+/* Left Part */
+.leftPart {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50%;
+    max-width: 600px;
+    height: 100%;
+}
+
+/* Right Part */
+.rightPart {
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    background-color: #ffffff; /* Light background for preview */
+    border-radius: 25px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1), -10px -10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.rightPart-dark {
+    background-color: #333; /* Dark background for preview */
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5), -10px -10px 20px rgba(0, 0, 0, 0.5); /* Darker shadow */
+}
+
+/* Editor Content */
+.content {
+    background-color: #ffffff; /* Light background for editor areas */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.content-dark {
+    background-color: #2a2a2a; /* Dark background for editor areas */
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset -5px -5px 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
+}
+
+label {
+    display: block;
+    color: #333;
+    padding-bottom: 10px;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.bg-dark label {
+    color: #ddd;
+}
+
+textarea {
+    width: 100%;
+    height: calc(100% - 40px);
+    background-color: #f8f8f8; /* Light background for textarea */
+    color: #333;
+    padding: 20px; /* Increased padding for more input space */
+    border-radius: 15px;
+    border: 1px solid #ccc; /* Subtle border */
+    outline: none;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+    resize: none;
+    font-family: 'Courier New', monospace;
+}
+
+.content-dark textarea {
+    background-color: #444; /* Dark background for textarea */
+    color: #e0e0e0;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.5), inset -5px -5px 10px rgba(0, 0, 0, 0.5); /* Darker shadow */
+    border: 1px solid #666; /* Dark border */
+}
+
+/* Iframe Styles */
+iframe {
+    width: 100%;
+    height: calc(100% - 30px);
+    border-radius: 15px;
+    border: none;
+    background-color: #ffffff; /* Light background for iframe */
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), inset -5px -5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.rightPart-dark iframe {
+    background-color: #333; /* Dark background for iframe */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .editor-container {
+        flex-direction: column;
+        height: auto;
     }
 
     .leftPart {
-        display: flex;
-        flex-basis: 50%;
-        height: 100vh;
-        background-color: #212121; 
+        width: 100%;
         flex-direction: column;
-        gap: 20px;
-        color: #fff;
-    }
-
-    .content {
-        flex-basis: 33%;
-        background-color: #2a2a2a;
-        padding: 10px; 
     }
 
     .rightPart {
-        flex-basis: 50%;
-        height: 100vh;
-        background-color: #333; 
-        color: #fff;
+        width: 100%;
+        height: 300px;
+        margin-top: 10px;
     }
+}
 
-    .leftPart .content label {
-        display: block;
-        color: #ccc; 
-        padding: 10px 0;
-    }
-
-    .leftPart .content textarea {
-        width: calc(100% - 20px);
-        height: calc(82% - 20px);
-        outline: none;
-        border: none;
-        background-color: #333; 
-        color: #fff;
-        padding: 10px;
-        font-family: 'Segoe Script', sans-serif; 
-    }
-
-    .rightPart label {
-        display: block;
-        padding: 10px;
-        background-color: #444; 
-        color: #ccc; 
+@media (max-width: 768px) {
+    .leftPart .content {
+        width: 100%;
+        height: 200px;
     }
 
     .rightPart iframe {
-        display: block;
-        width: 100%;
-        height: 90%;
-        border: 1px solid #555;
-        box-sizing: border-box;
+        height: 100%;
     }
 
-    textarea{
-        font-family: sans-serif;
+    .editor-container {
+        padding: 10px;
     }
+}
+
+@media (max-width: 480px) {
+    .toggle-btn {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 22px;
+    }
+
+    .checkbox-label {
+        width: 40px;
+        height: 22px;
+    }
+
+    .checkbox-label .ball {
+        width: 18px;
+        height: 18px;
+        left: 2px;
+        top: 2px;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .leftPart, .rightPart {
+        width: 100%;
+    }
+
+    .leftPart {
+        gap: 10px;
+    }
+
+    .rightPart {
+        height: auto;
+    }
+}
